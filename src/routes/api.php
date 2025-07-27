@@ -1,10 +1,10 @@
 <?php
  
-use Illuminate\Support\Facades\Route; 
-
-Route::get("/testpackage", function(){
-    return response("Package Api Working...");//->json(["status" => 200, "message" => "Package Api Working..."]);
-});
+use Illuminate\Support\Facades\Route;
+use Neo\NepLocation\Http\Modules\AdministrativeAreas\AdministrativeAreaApiController;
+use Neo\NepLocation\Http\Modules\AdministrativeAreaTypes\AdministrativeAreaTypeApiController;
+use Neo\NepLocation\Http\Modules\Districts\DistrictApiController;
+use Neo\NepLocation\Http\Modules\States\StateApiController;
 
 Route::prefix('neo-nep-location')->group(function () {
     Route::apiResource('state', StateApiController::class);
