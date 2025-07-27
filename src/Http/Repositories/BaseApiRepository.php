@@ -5,6 +5,7 @@ namespace Neo\NepLocation\Http\Repositories;
 use Illuminate\Http\Request;
 use Neo\NepLocation\Http\Contracts\ApiRepositoryInterface;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Model;
 
 abstract class BaseApiRepository implements ApiRepositoryInterface
 {
