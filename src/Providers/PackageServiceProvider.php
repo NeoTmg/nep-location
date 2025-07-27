@@ -33,5 +33,8 @@ class PackageServiceProvider extends ServiceProvider
     { 
         // Register config, commands, or bindings
         $this->mergeConfigFrom(__DIR__.'/../config/nep-location.php', 'nep-location');
+
+        RestApiServiceBindingRegistrar::register($this->app);
+        RestApiRepositoryBindingRegistrar::register($this->app);
     }
 }
