@@ -30,15 +30,8 @@ class PackageServiceProvider extends ServiceProvider
      * @return void
      */
     public function register()
-    {
-        $this->app->singleton('command.testpackage.make-model', function ($app) {
-            return new MakeModel();
-        });
-
-        $this->commands([
-            'command.testpackage.make-model',
-        ]);
+    { 
         // Register config, commands, or bindings
-        $this->mergeConfigFrom(__DIR__.'/../config/testpackage.php', 'testpackage');
+        $this->mergeConfigFrom(__DIR__.'/../config/nep-location.php', 'nep-location');
     }
 }
