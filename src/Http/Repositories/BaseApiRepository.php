@@ -1,8 +1,10 @@
 <?php
 
 namespace Neo\NepLocation\Http\Repositories;
-
+ 
+use Illuminate\Http\Request;
 use Neo\NepLocation\Http\Contracts\ApiRepositoryInterface;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 abstract class BaseApiRepository implements ApiRepositoryInterface
 {
@@ -18,7 +20,7 @@ abstract class BaseApiRepository implements ApiRepositoryInterface
      *
      * @param  array<string>  $columns
      */
-    public function all(mixed $request, array $columns = ['*']): LengthAwarePaginator
+    public function all(Request $request, array $columns = ['*']): LengthAwarePaginator
     {
         $request->per_page = $request->per_page ?? 20;
         $perPage = $request->per_page;

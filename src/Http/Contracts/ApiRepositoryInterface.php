@@ -4,7 +4,7 @@ namespace Neo\NepLocation\Http\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 interface ApiRepositoryInterface 
 {
