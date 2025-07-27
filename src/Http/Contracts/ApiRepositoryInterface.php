@@ -4,7 +4,8 @@ namespace Neo\NepLocation\Http\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
-  
+use Illuminate\Support\Facades\Request;
+
 interface ApiRepositoryInterface 
 {
     /**
@@ -12,7 +13,7 @@ interface ApiRepositoryInterface
      *
      * @param  array<string>  $columns
      */
-    public function all(mixed $request, array $columns = ['*']): LengthAwarePaginator;
+    public function all(Request $request, array $columns = ['*']): LengthAwarePaginator;
 
     /**
      * Find a record matching the given conditions.
