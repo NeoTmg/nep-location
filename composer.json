@@ -1,0 +1,32 @@
+{
+    "name": "neo/nep-location-hierarchy",
+    "description": "test package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Neo\\NepLocation\\": "src"
+        }
+    },
+    
+    "authors": [
+        {
+            "name": "leaiserneo",
+            "email": "tamangkiran485@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "illuminate/support": "^9.0|^10.0|^11.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Neo\\NepLocation\\Providers\\PackageServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+
+}
