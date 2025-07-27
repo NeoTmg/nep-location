@@ -27,9 +27,9 @@ abstract class BaseApiRepository implements ApiRepositoryInterface
         $perPage = $request->per_page;
 
         return $this->getModel()
-            ->when($request, function ($query) {
-                return $query->filter()->sort();
-            })
+            // ->when($request, function ($query) {
+            //     return $query->filter()->sort();
+            // })
             ->select($columns)
             ->paginate($perPage);
     }
