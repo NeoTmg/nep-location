@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::connection(config('nep-address.connection'))->create('districts', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->unsignedBigInteger('province_id')->nullable(); 
+            $table->unsignedBigInteger('province_id')->nullable()->index(); 
             $table->timestamps();
 
             // Foreign Key

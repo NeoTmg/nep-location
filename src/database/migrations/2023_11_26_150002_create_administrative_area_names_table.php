@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::connection(config('nep-address.connection'))->create('administrative_area_names', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->unsignedBigInteger('district_id')->nullable();  
-            $table->bigInteger("area_type_id")->unsigned()->index(); 
+            $table->unsignedBigInteger('district_id')->nullable()->index();  
+            $table->unsignedBigInteger("area_type_id")->nullable()->index(); 
             $table->timestamps();
 
             // Foreign Key
