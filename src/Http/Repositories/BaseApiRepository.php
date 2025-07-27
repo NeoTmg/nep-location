@@ -1,7 +1,9 @@
 <?php
 
 namespace Neo\NepLocation\Http\Repositories;
-  
+
+use Neo\NepLocation\Http\Contracts\ApiRepositoryInterface;
+
 abstract class BaseApiRepository implements ApiRepositoryInterface
 {
     /**
