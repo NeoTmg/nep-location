@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api\AdministrativeAreas;
-
-use App\Http\Controllers\Api\AdministrativeAreas\Contracts\AdministrativeAreaApiInterface;
+namespace Neo\NepLocation\Http\Modules\AdministrativeAreas;
+ 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Neo\NepLocation\Http\Modules\AdministrativeAreas\Contracts\AdministrativeAreaApiInterface;
 
 class AdministrativeAreaApiController
 {

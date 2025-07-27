@@ -1,10 +1,6 @@
 <?php
-
-use App\Http\Controllers\Api\AdministrativeAreas\AdministrativeAreaApiController;
-use Illuminate\Support\Facades\Route;
-use Neo\NepLocation\Http\Modules\AdministrativeAreaTypes\AdministrativeAreaTypeApiController;
-use Neo\NepLocation\Http\Modules\Districts\DistrictApiController;
-use Neo\NepLocation\Http\Modules\States\StateApiController;
+ 
+use Illuminate\Support\Facades\Route; 
 
 Route::get("/testpackage", function(){
     return response("Package Api Working...");//->json(["status" => 200, "message" => "Package Api Working..."]);
