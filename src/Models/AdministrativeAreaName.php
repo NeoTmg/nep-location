@@ -11,4 +11,14 @@ class AdministrativeAreaName extends Model
 
     protected $fillable = [];
     protected $guarded = [];
+
+    public function areaType()
+    {
+        return $this->hasOne(AdministrativeAreaType::class, 'id', 'area_type_id');
+    }
+
+    public function district()
+    {
+        return $this->hasOne(District::class, 'id', 'district_id');
+    }
 }

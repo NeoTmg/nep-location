@@ -13,7 +13,7 @@ interface ApiRepositoryInterface
      *
      * @param  array<string>  $columns
      */
-    public function all(Request $request, array $columns = ['*']): LengthAwarePaginator;
+    public function all(Request $request, array $columns = ['*'], array $with = []): LengthAwarePaginator;
 
     /**
      * Find a record matching the given conditions.
@@ -22,7 +22,7 @@ interface ApiRepositoryInterface
      * @param  array<string>  $columns
      * @return array<string, mixed>|null
      */
-    public function find(array $match, array $columns = ['*']): ?array;
+    public function find(array $match, array $columns = ['*'], array $with = []): ?array;
 
     /**
      * Create a new resource in the database.

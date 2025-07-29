@@ -21,12 +21,13 @@ abstract class BaseApiRepository implements ApiRepositoryInterface
      *
      * @param  array<string>  $columns
      */
-    public function all(Request $request, array $columns = ['*']): LengthAwarePaginator
+    public function all(Request $request, array $columns = ['*'], array $with = []): LengthAwarePaginator
     {
         $request->per_page = $request->per_page ?? 20;
         $perPage = $request->per_page;
 
         return $this->getModel()
+            ->with($with)
             // ->when($request, function ($query) {
             //     return $query->filter()->sort();
             // })
@@ -41,9 +42,9 @@ abstract class BaseApiRepository implements ApiRepositoryInterface
      * @param  array<string>  $columns
      * @return array<string, mixed>|null
      */
-    public function find(array $match, array $columns = ['*']): ?array
+    public function find(array $match, array $columns = ['*'], array $with = []): ?array
     {
-        return $this->getModel()::where($match)->first($columns)?->toArray();
+        return $this->getModel()::with($with)->where($match)->first($columns)?->toArray();
     }
 
     /**

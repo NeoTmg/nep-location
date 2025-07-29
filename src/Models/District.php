@@ -11,4 +11,9 @@ class District extends Model
 
     protected $fillable = [];
     protected $guarded = [];
+
+    public function province()
+    {
+        return $this->hasOne(Province::class, 'id', 'province_id');
+    }
 }
