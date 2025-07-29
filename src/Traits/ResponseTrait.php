@@ -14,16 +14,14 @@ trait ResponseTrait
      * Returns clean resource data without status/message wrapper
      */
     protected function successResponse($data, ?string $resourceClass = null)
-    { 
-        // If it's already a resource or resource collection, wrap with additional meta
+    {  
         if ($data instanceof JsonResource || $data instanceof AnonymousResourceCollection) {
             return $data->additional([
                 'status' => 200,
                 'message' => 'Success',
             ]);
         }
-
-        // If resource class provided, transform the data
+ 
         if ($resourceClass && class_exists($resourceClass)) {
             if ($data instanceof LengthAwarePaginator || is_iterable($data)) {
                 return $resourceClass::collection($data)->additional([
@@ -36,9 +34,7 @@ trait ResponseTrait
                     'message' => 'Success',
                 ]);
             }
-        }
-
-        // Fallback: return raw data with status and message
+        } 
         return response()->json([
             'status' => 200,
             'message' => 'Success',
