@@ -14,24 +14,7 @@ trait ResponseTrait
      * Returns clean resource data without status/message wrapper
      */
     protected function successResponse($data, ?string $resourceClass = null)
-    {
-        // If it's already a resource or resource collection, return as-is
-        // if ($data instanceof JsonResource || $data instanceof AnonymousResourceCollection) {
-        //     return $data;
-        // }
-
-        // // If resource class provided, transform the data
-        // if ($resourceClass && class_exists($resourceClass)) {
-        //     if ($data instanceof LengthAwarePaginator || is_iterable($data)) {
-        //         return $resourceClass::collection($data);
-        //     } else {
-        //         return new $resourceClass($data);
-        //     }
-        // }
-
-        // // Fallback: return raw data with 200 status
-        // return response()->json($data, 200);
-
+    { 
         // If it's already a resource or resource collection, wrap with additional meta
         if ($data instanceof JsonResource || $data instanceof AnonymousResourceCollection) {
             return $data->additional([
