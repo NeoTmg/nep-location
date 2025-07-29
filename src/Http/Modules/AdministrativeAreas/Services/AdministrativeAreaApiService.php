@@ -29,13 +29,13 @@ class AdministrativeAreaApiService implements AdministrativeAreaApiInterface
 
     public function index(mixed $request): AnonymousResourceCollection
     {
-        $items = $this->repository->all($request, [], ['district', 'areaType']);
+        $items = $this->repository->all($request, ['*'], ['district', 'areaType']);
         return $this->successResponse($this->resourceClass::collection($items), $this->resourceClass);
     }
 
     public function show(int $id): JsonResponse
     {
-        $item = $this->repository->find(['id' => $id], [], ['district', 'areaType']);
+        $item = $this->repository->find(['id' => $id], ['*'], ['district', 'areaType']);
         if (!$item) {
             throw new ResourceNotFoundException('AdministrativeArea', $id);
         }

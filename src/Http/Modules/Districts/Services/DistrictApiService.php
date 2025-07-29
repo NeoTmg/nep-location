@@ -28,13 +28,13 @@ class DistrictApiService implements DistrictApiInterface
 
     public function index(mixed $request): AnonymousResourceCollection
     {
-        $items = $this->repository->all($request, [], ['province']);
+        $items = $this->repository->all($request, ['*'], ['province']);
         return $this->successResponse($this->resourceClass::collection($items), $this->resourceClass);
     }
 
     public function show(int $id): JsonResponse
     {
-        $item = $this->repository->find(['id' => $id], [] , ['province']);
+        $item = $this->repository->find(['id' => $id], ['*'] , ['province']);
         if (!$item) {
             throw new ResourceNotFoundException('District', $id);
         }

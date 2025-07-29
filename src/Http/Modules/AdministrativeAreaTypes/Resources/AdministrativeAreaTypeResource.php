@@ -10,7 +10,7 @@ class AdministrativeAreaTypeResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'id' => $this->name
+            'name' => $this->name
         ];
     }
 }
